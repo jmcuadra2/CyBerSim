@@ -1,0 +1,31 @@
+1)  ArDrawingData::ArDrawingData   (   const char * shape, ArColor primaryColor, int size, int layer, unsigned int defaultRefreshTime = 200,  ArColor secondaryColor = ArColor(255, 255, 255))    [inline] (libAria)
+
+	Contiene la información para representar los campos de sensores, paths, etc. Circulitos, flechas, polilíneas ...
+
+	Se llama desde:    bool   ArServerInfoDrawings::addDrawing (ArDrawingData *drawingData, const char *name, ArFunctor2< ArServerClient *, ArNetPacket *> *functor) (libArNetworking)
+
+2)  ArServerInfoRobot::ArServerInfoRobot (ArServerBase *server, ArRobot *robot) (libArNetworking)
+
+	Contiene la información de robot:
+
+				Status (Null-terminated string) 
+				Mode (Null-terminated string) 
+				Battery voltage (times 10) (2 Byte integer) 
+				X position (4 byte floating point number) 
+				Y position (4 byte floating point number) 
+				Theta (2-byte floating point number) 
+				Forward velocity (2-byte number) 
+				Rotation velocity (2-byte number)
+		* Los double son realmente int . (ver cpp)
+
+		Hay que añadirle las velocidades derecha e izquierda con ArServerExtInfoRobot.
+
+3) ArServerSimpleComUC::ArServerSimpleComUC (ArServerHandlerCommands *handlerCommands, ArRobot *robot)  (libArNetworking)
+
+	Mandar comandos al microcontrolador  (modo directo)
+
+
+4)    ArServerModeDrive::ArServerModeDrive (ArServerBase *server, ArRobot *robot, bool takeControlOnJoystick=false)  (libArNetworking)
+
+	Habilitar y deshabilitar safeDrive y Joystick
+
