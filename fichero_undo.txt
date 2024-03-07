@@ -1,0 +1,2 @@
+<!DOCTYPE log>
+<log/>
