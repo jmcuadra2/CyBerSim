@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HelpWindow</class>
+ <widget class="QMainWindow" name="HelpWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>580</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HelpWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../imagenes/icons.qrc">
+    <normaloff>:/icons/neuraldis32.xpm</normaloff>:/icons/neuraldis32.xpm</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTextBrowser" name="browser">
+      <property name="openExternalLinks">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuHelpBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>580</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Fi&amp;le</string>
+    </property>
+    <addaction name="actionNew_window"/>
+    <addaction name="actionOpen_file"/>
+    <addaction name="actionPrint"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuGo">
+    <property name="title">
+     <string>&amp;Go</string>
+    </property>
+    <addaction name="actionBackwards"/>
+    <addaction name="actionForwards"/>
+    <addaction name="actionHome"/>
+   </widget>
+   <widget class="QMenu" name="menuHistory">
+    <property name="title">
+     <string>Histo&amp;ry</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuBookmarks">
+    <property name="title">
+     <string>Boo&amp;kmarks</string>
+    </property>
+    <addaction name="actionAdd_bookmark"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuGo"/>
+   <addaction name="menuHistory"/>
+   <addaction name="menuBookmarks"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusHelp"/>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionNew_window">
+   <property name="text">
+    <string>&amp;New window</string>
+   </property>
+  </action>
+  <action name="actionOpen_file">
+   <property name="text">
+    <string>&amp;Open file</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>&amp;Print</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionBackwards">
+   <property name="icon">
+    <iconset resource="../imagenes/icons.qrc">
+     <normaloff>:/icons/back.xpm</normaloff>:/icons/back.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Backwards</string>
+   </property>
+  </action>
+  <action name="actionForwards">
+   <property name="icon">
+    <iconset resource="../imagenes/icons.qrc">
+     <normaloff>:/icons/forward.xpm</normaloff>:/icons/forward.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Forwards</string>
+   </property>
+  </action>
+  <action name="actionHome">
+   <property name="icon">
+    <iconset resource="../imagenes/icons.qrc">
+     <normaloff>:/icons/home.xpm</normaloff>:/icons/home.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Home</string>
+   </property>
+  </action>
+  <action name="actionAdd_bookmark">
+   <property name="text">
+    <string>&amp;Add bookmark</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About ...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../imagenes/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

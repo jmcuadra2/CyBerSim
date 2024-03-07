@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icons" >
+        <file>addiso.xpm</file>
+        <file>addnetview.xpm</file>
+        <file>addnetwork2.xpm</file>
+        <file>addnetwork.xpm</file>
+        <file>addneuron.xpm</file>
+        <file>addsynapse.xpm</file>
+        <file>buildnet.xpm</file>
+        <file>clearnet.xpm</file>
+        <file>delnetview.xpm</file>
+        <file>delneuron.xpm</file>
+        <file>delsynapse.xpm</file>
+        <file>editnetview.xpm</file>
+        <file>editneuron.xpm</file>
+        <file>editsynapse.xpm</file>
+        <file>lateral.xpm</file>
+        <file>netview_move.xpm</file>
+        <file>netview_redim.xpm</file>
+        <file>netview_zoom.xpm</file>
+        <file>pointer.xpm</file>
+    </qresource>
+</RCC>

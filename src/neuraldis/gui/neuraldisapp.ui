@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NeuralDisApp</class>
+ <widget class="QMainWindow" name="NeuralDisApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>872</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>16</width>
+    <height>88</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>CyBeRSim</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <widget class="QWidget" name="widget"/>
+  <widget class="QToolBar" name="fileToolbar">
+   <property name="label" stdset="0">
+    <string>File tools</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="fileNew"/>
+   <addaction name="fileOpen"/>
+   <addaction name="fileSave"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="designerBar">
+   <property name="label" stdset="0">
+    <string>Net tools</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="toolPointer"/>
+   <addaction name="toolNetInfo"/>
+   <addaction name="toolNetView"/>
+   <addaction name="separator"/>
+   <addaction name="toolAddNeuron"/>
+   <addaction name="toolDelNeuron"/>
+   <addaction name="toolEditNeuron"/>
+   <addaction name="separator"/>
+   <addaction name="toolAddSynapse"/>
+   <addaction name="toolDelSynapse"/>
+   <addaction name="toolEditSynapse"/>
+   <addaction name="separator"/>
+   <addaction name="toolAddNetwork"/>
+   <addaction name="toolDelNetwork"/>
+   <addaction name="toolEditNetwork"/>
+  </widget>
+  <widget class="QToolBar" name="simulatorBar">
+   <property name="label" stdset="0">
+    <string>Simulation controls</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="simGo"/>
+   <addaction name="simStep"/>
+   <addaction name="simPause"/>
+   <addaction name="simStop"/>
+   <addaction name="simRecord"/>
+   <addaction name="separator"/>
+   <addaction name="actionDrive_robot"/>
+  </widget>
+  <widget class="QMenuBar" name="MenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>872</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="popupMenu_9">
+     <property name="title">
+      <string>&amp;Export</string>
+     </property>
+     <addaction name="netExport"/>
+     <addaction name="pathExport"/>
+     <addaction name="worldExport"/>
+     <addaction name="actionScilabExport"/>
+     <addaction name="actionFixWorld"/>
+    </widget>
+    <addaction name="fileNew"/>
+    <addaction name="fileOpen"/>
+    <addaction name="fileClose"/>
+    <addaction name="separator"/>
+    <addaction name="fileSave"/>
+    <addaction name="fileSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="filePrint"/>
+    <addaction name="popupMenu_9"/>
+    <addaction name="fileTestXML"/>
+    <addaction name="separator"/>
+    <addaction name="fileQuit"/>
+   </widget>
+   <widget class="QMenu" name="editMenu">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="editCut"/>
+    <addaction name="editCopy"/>
+    <addaction name="editPaste"/>
+    <addaction name="separator"/>
+    <addaction name="editUndo"/>
+    <addaction name="editRedo"/>
+    <addaction name="separator"/>
+    <addaction name="editSettings"/>
+    <addaction name="saveSettings"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="viewMenu">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuShow_sensors">
+     <property name="title">
+      <string>Sh&amp;ow sensors</string>
+     </property>
+     <addaction name="actionShowAllSensors"/>
+     <addaction name="actionHideAllSensors"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="viewToolBar"/>
+    <addaction name="viewStatusBar"/>
+    <addaction name="viewDesignerBar"/>
+    <addaction name="separator"/>
+    <addaction name="menuShow_sensors"/>
+    <addaction name="viewLeyend"/>
+    <addaction name="viewViewRawText"/>
+    <addaction name="separator"/>
+    <addaction name="viewShowNetView"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="disMenu">
+    <property name="title">
+     <string>Desi&amp;gner</string>
+    </property>
+    <addaction name="disCreateNetwork"/>
+    <addaction name="disClearNetwork"/>
+    <addaction name="separator"/>
+    <addaction name="disAddNeuron"/>
+    <addaction name="disDelNeuron"/>
+    <addaction name="disEditNeuron"/>
+    <addaction name="separator"/>
+    <addaction name="disAddSynapse"/>
+    <addaction name="disDelSynapse"/>
+    <addaction name="disEditSynapse"/>
+    <addaction name="separator"/>
+    <addaction name="disAddNetwork"/>
+    <addaction name="disDelNetwork"/>
+    <addaction name="disEditNetwork"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="simMenu">
+    <property name="title">
+     <string>Si&amp;mulator</string>
+    </property>
+    <addaction name="simNew"/>
+    <addaction name="simLoad"/>
+    <addaction name="simEdit"/>
+    <addaction name="simSave"/>
+    <addaction name="simClose"/>
+    <addaction name="separator"/>
+    <addaction name="simGo"/>
+    <addaction name="simStep"/>
+    <addaction name="simPause"/>
+    <addaction name="simStop"/>
+    <addaction name="simRecord"/>
+    <addaction name="separator"/>
+    <addaction name="actionDrive_robot"/>
+    <addaction name="actionFilm_simulation"/>
+    <addaction name="actionRecord_sensors"/>
+   </widget>
+   <widget class="QMenu" name="worldMenu">
+    <property name="title">
+     <string>World</string>
+    </property>
+    <addaction name="createWorld"/>
+    <addaction name="editWorld"/>
+    <addaction name="loadWorld"/>
+    <addaction name="actionSaveWorld"/>
+    <addaction name="closeWorld"/>
+    <addaction name="separator"/>
+    <addaction name="zoomOut"/>
+    <addaction name="zoomIn"/>
+    <addaction name="worldRestoreZoomAction"/>
+    <addaction name="separator"/>
+    <addaction name="worldCenterInRobotAction"/>
+    <addaction name="worldScaleAction"/>
+    <addaction name="actionRotateView"/>
+    <addaction name="separator"/>
+    <addaction name="actionDefault_materials"/>
+    <addaction name="actionShow_quadtree"/>
+   </widget>
+   <widget class="QMenu" name="pWindowMenu">
+    <property name="title">
+     <string>Wi&amp;ndow</string>
+    </property>
+    <addaction name="windowCascade"/>
+    <addaction name="windowTile"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="helpAboutApp"/>
+    <addaction name="helpManualApp"/>
+    <addaction name="helpAPIAction"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="editMenu"/>
+   <addaction name="viewMenu"/>
+   <addaction name="disMenu"/>
+   <addaction name="simMenu"/>
+   <addaction name="worldMenu"/>
+   <addaction name="pWindowMenu"/>
+   <addaction name="Help"/>
+  </widget>
+  <action name="fileNew">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/filenew.xpm</normaloff>:/icons/filenew.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="iconText">
+    <string>New File</string>
+   </property>
+   <property name="statusTip">
+    <string>Creates a new document</string>
+   </property>
+   <property name="whatsThis">
+    <string>New File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileNew</string>
+   </property>
+  </action>
+  <action name="fileOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/fileopen.xpm</normaloff>:/icons/fileopen.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="iconText">
+    <string>Open File</string>
+   </property>
+   <property name="statusTip">
+    <string>Opens an existing document</string>
+   </property>
+   <property name="whatsThis">
+    <string>Open File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileOpen</string>
+   </property>
+  </action>
+  <action name="fileSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/filesave.xpm</normaloff>:/icons/filesave.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="iconText">
+    <string>Save</string>
+   </property>
+   <property name="statusTip">
+    <string>Saves the current document</string>
+   </property>
+   <property name="whatsThis">
+    <string>Save File.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileSave</string>
+   </property>
+  </action>
+  <action name="fileSaveAs">
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+   <property name="iconText">
+    <string>Save As...</string>
+   </property>
+   <property name="statusTip">
+    <string>Saves the current document under a new filename</string>
+   </property>
+   <property name="whatsThis">
+    <string>Save As</string>
+   </property>
+   <property name="shortcut">
+    <string/>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileSaveAs</string>
+   </property>
+  </action>
+  <action name="filePrint">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/printer1.png</normaloff>:/icons/printer1.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Print...</string>
+   </property>
+   <property name="iconText">
+    <string>Print...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>filePrint</string>
+   </property>
+  </action>
+  <action name="fileQuit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="iconText">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Quits the application</string>
+   </property>
+   <property name="whatsThis">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileQuit</string>
+   </property>
+  </action>
+  <action name="editCut">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editcut.png</normaloff>:/icons/editcut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+   <property name="iconText">
+    <string>Cut</string>
+   </property>
+   <property name="statusTip">
+    <string>Cuts the selected section and puts it to the clipboard</string>
+   </property>
+   <property name="whatsThis">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editCut</string>
+   </property>
+  </action>
+  <action name="editCopy">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editcopy.png</normaloff>:/icons/editcopy.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="iconText">
+    <string>Copy</string>
+   </property>
+   <property name="statusTip">
+    <string>Copies the selected section and puts it to the clipboard</string>
+   </property>
+   <property name="whatsThis">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editCopy</string>
+   </property>
+  </action>
+  <action name="editPaste">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editpaste.png</normaloff>:/icons/editpaste.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="iconText">
+    <string>Paste</string>
+   </property>
+   <property name="statusTip">
+    <string>Pastes the selected section and puts it to the clipboard</string>
+   </property>
+   <property name="whatsThis">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editPaste</string>
+   </property>
+  </action>
+  <action name="helpAboutApp">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/neuraldis32.xpm</normaloff>:/icons/neuraldis32.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="iconText">
+    <string>About</string>
+   </property>
+   <property name="statusTip">
+    <string>About the application</string>
+   </property>
+   <property name="whatsThis">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string/>
+   </property>
+   <property name="name" stdset="0">
+    <string>helpAboutApp</string>
+   </property>
+  </action>
+  <action name="fileClose">
+   <property name="iconText">
+    <string>Close</string>
+   </property>
+   <property name="statusTip">
+    <string>Closes the current document</string>
+   </property>
+   <property name="whatsThis">
+    <string>Close</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileClose</string>
+   </property>
+  </action>
+  <action name="viewToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Toolbar</string>
+   </property>
+   <property name="iconText">
+    <string>Toolbar</string>
+   </property>
+   <property name="statusTip">
+    <string>Enables/disables the toolbar</string>
+   </property>
+   <property name="whatsThis">
+    <string>Toolbar</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewToolBar</string>
+   </property>
+  </action>
+  <action name="viewStatusBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;StatusBar</string>
+   </property>
+   <property name="iconText">
+    <string>Statusbar</string>
+   </property>
+   <property name="statusTip">
+    <string>Enables/disables the statusbar</string>
+   </property>
+   <property name="whatsThis">
+    <string>Statusbar</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewStatusBar</string>
+   </property>
+  </action>
+  <action name="viewDesignerBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;DesignerBar</string>
+   </property>
+   <property name="iconText">
+    <string>DesignerBar</string>
+   </property>
+   <property name="statusTip">
+    <string>Enables/disables the designerbar</string>
+   </property>
+   <property name="whatsThis">
+    <string>Designerbar</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewDesignerBar</string>
+   </property>
+  </action>
+  <action name="disClearNetwork">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/clearnet.xpm</normaloff>:/icons/clearnet.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Clear Neural Network</string>
+   </property>
+   <property name="iconText">
+    <string>Clear Neural Network</string>
+   </property>
+   <property name="statusTip">
+    <string>Clear Neural Network</string>
+   </property>
+   <property name="whatsThis">
+    <string>Clear Neural Network</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disClearNetwork</string>
+   </property>
+  </action>
+  <action name="disAddNeuron">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/addneuron.xpm</normaloff>:/icons/addneuron.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Add a new Neuron</string>
+   </property>
+   <property name="iconText">
+    <string>AddNeuron</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Add a new Neuron</string>
+   </property>
+   <property name="whatsThis">
+    <string>Add neuron</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disAddNeuron</string>
+   </property>
+  </action>
+  <action name="disDelNeuron">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/delneuron.xpm</normaloff>:/icons/delneuron.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete a Neuron</string>
+   </property>
+   <property name="iconText">
+    <string>Delete a Neuron</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Delete a Neuron</string>
+   </property>
+   <property name="whatsThis">
+    <string>Delete neuron</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disDelNeuron</string>
+   </property>
+  </action>
+  <action name="disEditNeuron">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editneuron.xpm</normaloff>:/icons/editneuron.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Edit a Neuron</string>
+   </property>
+   <property name="iconText">
+    <string>Edit a Neuron</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Edit a Neuron</string>
+   </property>
+   <property name="whatsThis">
+    <string>Edit neuron</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disEditNeuron</string>
+   </property>
+  </action>
+  <action name="disAddSynapse">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/addsynapse.xpm</normaloff>:/icons/addsynapse.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Add a &amp;new Synapse</string>
+   </property>
+   <property name="iconText">
+    <string>Add a new Synapse</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Add a new Synapse</string>
+   </property>
+   <property name="whatsThis">
+    <string>Add synapse</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disAddSynapse</string>
+   </property>
+  </action>
+  <action name="disDelSynapse">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/delsynapse.xpm</normaloff>:/icons/delsynapse.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>De&amp;lete a Synapse</string>
+   </property>
+   <property name="iconText">
+    <string>Delete a Synapse</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Delete a Synapse</string>
+   </property>
+   <property name="whatsThis">
+    <string>Delete synapse</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disDelSynapse</string>
+   </property>
+  </action>
+  <action name="disEditSynapse">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editsynapse.xpm</normaloff>:/icons/editsynapse.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Ed&amp;it a Synapse</string>
+   </property>
+   <property name="iconText">
+    <string>Edit a Synapse</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;Edit a Synapse</string>
+   </property>
+   <property name="whatsThis">
+    <string>Edit synapse</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disEditSynapse</string>
+   </property>
+  </action>
+  <action name="viewLeyend">
+   <property name="text">
+    <string>Show &amp;weights legend</string>
+   </property>
+   <property name="iconText">
+    <string>Show weights legend</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;View weights legend</string>
+   </property>
+   <property name="whatsThis">
+    <string>Show weights legend</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewLeyend</string>
+   </property>
+  </action>
+  <action name="viewViewRawText">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/filetext.xpm</normaloff>:/icons/filetext.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Show &amp;raw text</string>
+   </property>
+   <property name="iconText">
+    <string>Show raw text</string>
+   </property>
+   <property name="statusTip">
+    <string>&quot;View raw text</string>
+   </property>
+   <property name="whatsThis">
+    <string>Show raw text</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewViewRawText</string>
+   </property>
+  </action>
+  <action name="disCreateNetwork">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/buildnet.xpm</normaloff>:/icons/buildnet.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Build Neural Network</string>
+   </property>
+   <property name="iconText">
+    <string>Build Neural Network</string>
+   </property>
+   <property name="statusTip">
+    <string>Build Neural Network</string>
+   </property>
+   <property name="whatsThis">
+    <string>Build Neural Network</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disCreateNetwork</string>
+   </property>
+  </action>
+  <action name="simLoad">
+   <property name="text">
+    <string>&amp;Load simulation</string>
+   </property>
+   <property name="iconText">
+    <string>Load simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Load simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Load simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simLoad</string>
+   </property>
+  </action>
+  <action name="simEdit">
+   <property name="text">
+    <string>&amp;Edit simulation</string>
+   </property>
+   <property name="iconText">
+    <string>Edit simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Edit simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Edit simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simEdit</string>
+   </property>
+  </action>
+  <action name="simSave">
+   <property name="text">
+    <string>&amp;Save simulation</string>
+   </property>
+   <property name="iconText">
+    <string>Save simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Save simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Save simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simSave</string>
+   </property>
+  </action>
+  <action name="simClose">
+   <property name="text">
+    <string>&amp;Close simulation</string>
+   </property>
+   <property name="iconText">
+    <string>Close simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Close simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Close simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simClose</string>
+   </property>
+  </action>
+  <action name="simRecord">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/simrecord.xpm</normaloff>:/icons/simrecord.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Record simulation</string>
+   </property>
+   <property name="iconText">
+    <string>Record simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Record simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Record simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simRecord</string>
+   </property>
+  </action>
+  <action name="simNew">
+   <property name="text">
+    <string>&amp;New simulation</string>
+   </property>
+   <property name="iconText">
+    <string>New simulation</string>
+   </property>
+   <property name="statusTip">
+    <string>Create simulation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Create simulation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>simNew</string>
+   </property>
+  </action>
+  <action name="helpManualApp">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Handbook</string>
+   </property>
+   <property name="iconText">
+    <string>Handbook</string>
+   </property>
+   <property name="statusTip">
+    <string>User Guide</string>
+   </property>
+   <property name="whatsThis">
+    <string>Handbook</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>helpManualApp</string>
+   </property>
+  </action>
+  <action name="createWorld">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/creaworld.xpm</normaloff>:/icons/creaworld.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Create</string>
+   </property>
+   <property name="iconText">
+    <string>Create</string>
+   </property>
+   <property name="statusTip">
+    <string>Create world</string>
+   </property>
+   <property name="whatsThis">
+    <string>Create world</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>createWorld</string>
+   </property>
+  </action>
+  <action name="editWorld">
+   <property name="text">
+    <string>&amp;Edit</string>
+   </property>
+   <property name="iconText">
+    <string>Edit</string>
+   </property>
+   <property name="statusTip">
+    <string>Edit world</string>
+   </property>
+   <property name="whatsThis">
+    <string>Edit world</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editWorld</string>
+   </property>
+  </action>
+  <action name="loadWorld">
+   <property name="text">
+    <string>&amp;Load</string>
+   </property>
+   <property name="iconText">
+    <string>Load</string>
+   </property>
+   <property name="statusTip">
+    <string>Load world</string>
+   </property>
+   <property name="whatsThis">
+    <string>Load world</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>loadWorld</string>
+   </property>
+  </action>
+  <action name="closeWorld">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="iconText">
+    <string>Close</string>
+   </property>
+   <property name="statusTip">
+    <string>Close world</string>
+   </property>
+   <property name="whatsThis">
+    <string>Close world</string>
+   </property>
+   <property name="shortcut">
+    <string/>
+   </property>
+   <property name="name" stdset="0">
+    <string>closeWorld</string>
+   </property>
+  </action>
+  <action name="zoomOut">
+   <property name="text">
+    <string>&amp;Zoom Out</string>
+   </property>
+   <property name="iconText">
+    <string>Zoom Out</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom Out</string>
+   </property>
+   <property name="whatsThis">
+    <string>Zoom Out</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>zoomOut</string>
+   </property>
+  </action>
+  <action name="zoomIn">
+   <property name="text">
+    <string>Zoom &amp;In</string>
+   </property>
+   <property name="iconText">
+    <string>Zoom In</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom In</string>
+   </property>
+   <property name="whatsThis">
+    <string>Zoom In</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>zoomIn</string>
+   </property>
+  </action>
+  <action name="editSettings">
+   <property name="text">
+    <string>&amp;Edit preferences</string>
+   </property>
+   <property name="iconText">
+    <string>Edit preferences</string>
+   </property>
+   <property name="statusTip">
+    <string>Edit configuration file</string>
+   </property>
+   <property name="whatsThis">
+    <string>Edit preferences</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editSettings</string>
+   </property>
+  </action>
+  <action name="saveSettings">
+   <property name="text">
+    <string>&amp;Save preferences</string>
+   </property>
+   <property name="iconText">
+    <string>Save preferences</string>
+   </property>
+   <property name="statusTip">
+    <string>Save configuration file</string>
+   </property>
+   <property name="whatsThis">
+    <string>Save preferences</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>saveSettings</string>
+   </property>
+  </action>
+  <action name="fileTestXML">
+   <property name="text">
+    <string>&amp;Test XML</string>
+   </property>
+   <property name="iconText">
+    <string>Test XML</string>
+   </property>
+   <property name="whatsThis">
+    <string>XML files structure analyzer</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>fileTestXML</string>
+   </property>
+  </action>
+  <action name="disAddNetwork">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/addnetview.xpm</normaloff>:/icons/addnetview.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Add a ne&amp;w SubNet</string>
+   </property>
+   <property name="iconText">
+    <string>Add a new SubNet</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disAddNetwork</string>
+   </property>
+  </action>
+  <action name="disDelNetwork">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/delnetview.xpm</normaloff>:/icons/delnetview.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Delete a SubNet</string>
+   </property>
+   <property name="iconText">
+    <string>Delete a SubNet</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disDelNetwork</string>
+   </property>
+  </action>
+  <action name="disEditNetwork">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/editnetview.xpm</normaloff>:/icons/editnetview.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Edit a S&amp;ubNet</string>
+   </property>
+   <property name="iconText">
+    <string>Edit a SubNet</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>disEditNetwork</string>
+   </property>
+  </action>
+  <action name="editUndo">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/undo.png</normaloff>:/icons/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+   <property name="iconText">
+    <string>Undo                </string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editUndo</string>
+   </property>
+  </action>
+  <action name="editRedo">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/redo.png</normaloff>:/icons/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Redo</string>
+   </property>
+   <property name="iconText">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>editRedo</string>
+   </property>
+  </action>
+  <action name="viewShowNetView">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/preview-icon.jpg</normaloff>:/icons/preview-icon.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Show &amp;Net View</string>
+   </property>
+   <property name="iconText">
+    <string>Show Net View</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>viewShowNetView</string>
+   </property>
+  </action>
+  <action name="helpAPIAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>A&amp;PI</string>
+   </property>
+   <property name="iconText">
+    <string>API</string>
+   </property>
+   <property name="statusTip">
+    <string>Developers documentation</string>
+   </property>
+   <property name="whatsThis">
+    <string>Developers documentation</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>helpAPIAction</string>
+   </property>
+  </action>
+  <action name="worldRestoreZoomAction">
+   <property name="text">
+    <string>&amp;Restore zoom</string>
+   </property>
+   <property name="iconText">
+    <string>Restore zoom</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>worldRestoreZoomAction</string>
+   </property>
+  </action>
+  <action name="worldCenterInRobotAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Ce&amp;nter in robot</string>
+   </property>
+   <property name="iconText">
+    <string>Center in robot</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>worldCenterInRobotAction</string>
+   </property>
+  </action>
+  <action name="filenew_itemAction">
+   <property name="text">
+    <string>new item</string>
+   </property>
+   <property name="iconText">
+    <string>new item</string>
+   </property>
+   <property name="name" stdset="0">
+    <string>filenew_itemAction</string>
+   </property>
+  </action>
+  <action name="actionDrive_robot">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/joystick.png</normaloff>:/icons/joystick.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Drive robot</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionSonar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sonar</string>
+   </property>
+  </action>
+  <action name="actionLaser">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Laser</string>
+   </property>
+  </action>
+  <action name="actionShowAllSensors">
+   <property name="text">
+    <string>&amp;Show all</string>
+   </property>
+  </action>
+  <action name="actionHideAllSensors">
+   <property name="text">
+    <string>&amp;Hide all</string>
+   </property>
+  </action>
+  <action name="worldExport">
+   <property name="text">
+    <string>Export &amp;world</string>
+   </property>
+  </action>
+  <action name="worldScaleAction">
+   <property name="text">
+    <string>Scale</string>
+   </property>
+  </action>
+  <action name="actionScilabExport">
+   <property name="text">
+    <string>&amp;Scilab</string>
+   </property>
+  </action>
+  <action name="actionFixWorld">
+   <property name="text">
+    <string>&amp;Fix world</string>
+   </property>
+  </action>
+  <action name="actionSaveWorld">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionLoadXMLWorld">
+   <property name="text">
+    <string>LoadXML</string>
+   </property>
+  </action>
+  <action name="actionFilm_simulation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/simvideo.png</normaloff>:/icons/simvideo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Film simulation</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionDefault_materials">
+   <property name="text">
+    <string>&amp;Default materials</string>
+   </property>
+  </action>
+  <action name="actionRecord_sensors">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Record sensors</string>
+   </property>
+  </action>
+  <action name="actionRotateView">
+   <property name="text">
+    <string>R&amp;otate</string>
+   </property>
+  </action>
+  <action name="actionShow_quadtree">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;quadtree</string>
+   </property>
+  </action>
+  <actiongroup name="fileExport">
+   <action name="netExport">
+    <property name="text">
+     <string>&amp;Export net</string>
+    </property>
+    <property name="iconText">
+     <string>Export net</string>
+    </property>
+    <property name="statusTip">
+     <string>&quot;Exports the current net to graphic formats</string>
+    </property>
+    <property name="whatsThis">
+     <string>Export File</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>netExport</string>
+    </property>
+   </action>
+   <action name="pathExport">
+    <property name="text">
+     <string>Export &amp;path</string>
+    </property>
+    <property name="iconText">
+     <string>Export path</string>
+    </property>
+    <property name="statusTip">
+     <string>&quot;Exports robot path to graphic formats</string>
+    </property>
+    <property name="whatsThis">
+     <string>Export Path</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>pathExport</string>
+    </property>
+   </action>
+   <property name="name" stdset="0">
+    <string>fileExport</string>
+   </property>
+  </actiongroup>
+  <actiongroup name="windowAction">
+   <action name="windowCascade">
+    <property name="text">
+     <string>&amp;Cascade</string>
+    </property>
+    <property name="iconText">
+     <string>Cascade</string>
+    </property>
+    <property name="statusTip">
+     <string>Cascades all windows</string>
+    </property>
+    <property name="whatsThis">
+     <string>Cascade</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>windowCascade</string>
+    </property>
+   </action>
+   <action name="windowTile">
+    <property name="text">
+     <string>&amp;Tile</string>
+    </property>
+    <property name="iconText">
+     <string>Tile</string>
+    </property>
+    <property name="statusTip">
+     <string>Tiles all windows</string>
+    </property>
+    <property name="whatsThis">
+     <string>Tile</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>windowTile</string>
+    </property>
+   </action>
+   <property name="name" stdset="0">
+    <string>windowAction</string>
+   </property>
+  </actiongroup>
+  <actiongroup name="toolDis">
+   <action name="toolPointer">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/pointer.xpm</normaloff>:/icons/pointer.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Selection tool</string>
+    </property>
+    <property name="toolTip">
+     <string>Selection tool</string>
+    </property>
+    <property name="statusTip">
+     <string>Selection tool</string>
+    </property>
+    <property name="whatsThis">
+     <string>Selection tool</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolPointer</string>
+    </property>
+   </action>
+   <action name="toolAddNeuron">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/addneuron.xpm</normaloff>:/icons/addneuron.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Add neuron</string>
+    </property>
+    <property name="toolTip">
+     <string>Add neuron</string>
+    </property>
+    <property name="whatsThis">
+     <string>Add neuron</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolAddNeuron</string>
+    </property>
+   </action>
+   <action name="toolDelNeuron">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/delneuron.xpm</normaloff>:/icons/delneuron.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Delete neuron</string>
+    </property>
+    <property name="toolTip">
+     <string>Delete neuron</string>
+    </property>
+    <property name="whatsThis">
+     <string>Delete neuron</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolDelNeuron</string>
+    </property>
+   </action>
+   <action name="toolEditNeuron">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/editneuron.xpm</normaloff>:/icons/editneuron.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Edit neuron</string>
+    </property>
+    <property name="toolTip">
+     <string>Edit neuron</string>
+    </property>
+    <property name="whatsThis">
+     <string>Edit neuron</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolEditNeuron</string>
+    </property>
+   </action>
+   <action name="toolAddSynapse">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/addsynapse.xpm</normaloff>:/icons/addsynapse.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Add synapse</string>
+    </property>
+    <property name="toolTip">
+     <string>Add synapse</string>
+    </property>
+    <property name="whatsThis">
+     <string>Add synapse</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolAddSynapse</string>
+    </property>
+   </action>
+   <action name="toolDelSynapse">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/delsynapse.xpm</normaloff>:/icons/delsynapse.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Delete synapse</string>
+    </property>
+    <property name="toolTip">
+     <string>Delete synapse</string>
+    </property>
+    <property name="whatsThis">
+     <string>Delete synapse</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolDelSynapse</string>
+    </property>
+   </action>
+   <action name="toolEditSynapse">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/editsynapse.xpm</normaloff>:/icons/editsynapse.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Edit synapse</string>
+    </property>
+    <property name="toolTip">
+     <string>Edit synapse</string>
+    </property>
+    <property name="whatsThis">
+     <string>Edit synapse</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolEditSynapse</string>
+    </property>
+   </action>
+   <action name="toolAddNetwork">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/addnetwork2.xpm</normaloff>:/icons/addnetwork2.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Action</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolAddNetwork</string>
+    </property>
+   </action>
+   <action name="toolDelNetwork">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/delnetview.xpm</normaloff>:/icons/delnetview.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Action</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolDelNetwork</string>
+    </property>
+   </action>
+   <action name="toolEditNetwork">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/editnetview.xpm</normaloff>:/icons/editnetview.xpm</iconset>
+    </property>
+    <property name="iconText">
+     <string>Action</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolEditNetwork</string>
+    </property>
+   </action>
+   <action name="toolNetView">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>image22</normaloff>image22</iconset>
+    </property>
+    <property name="iconText">
+     <string>Action</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolNetView</string>
+    </property>
+   </action>
+   <action name="toolNetInfo">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+    </property>
+    <property name="iconText">
+     <string>Net info</string>
+    </property>
+    <property name="toolTip">
+     <string>Shows neurons what is this?</string>
+    </property>
+    <property name="whatsThis">
+     <string>Shows neurons what is this?</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>toolNetInfo</string>
+    </property>
+   </action>
+   <property name="name" stdset="0">
+    <string>toolDis</string>
+   </property>
+  </actiongroup>
+  <actiongroup name="toolSim">
+   <action name="simGo">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/simgo.xpm</normaloff>:/icons/simgo.xpm</iconset>
+    </property>
+    <property name="text">
+     <string>&amp;Go simulation</string>
+    </property>
+    <property name="iconText">
+     <string>Go simulation</string>
+    </property>
+    <property name="statusTip">
+     <string>Go simulation</string>
+    </property>
+    <property name="whatsThis">
+     <string>Go simulation</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>simGo</string>
+    </property>
+   </action>
+   <action name="simStep">
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/simstep.xpm</normaloff>:/icons/simstep.xpm</iconset>
+    </property>
+    <property name="text">
+     <string>Step &amp;by step simulation</string>
+    </property>
+    <property name="iconText">
+     <string>Step simulation</string>
+    </property>
+    <property name="statusTip">
+     <string>Step by step simulation</string>
+    </property>
+    <property name="whatsThis">
+     <string>Step simulation</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>simStep</string>
+    </property>
+   </action>
+   <action name="simPause">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/simpause.xpm</normaloff>:/icons/simpause.xpm</iconset>
+    </property>
+    <property name="text">
+     <string>&amp;Pause simulation</string>
+    </property>
+    <property name="iconText">
+     <string>Pause simulation</string>
+    </property>
+    <property name="statusTip">
+     <string>Pause simulation</string>
+    </property>
+    <property name="whatsThis">
+     <string>Pause simulation</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>simPause</string>
+    </property>
+   </action>
+   <action name="simStop">
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/simstop.xpm</normaloff>:/icons/simstop.xpm</iconset>
+    </property>
+    <property name="text">
+     <string>St&amp;op simulation</string>
+    </property>
+    <property name="iconText">
+     <string>Stop simulation</string>
+    </property>
+    <property name="statusTip">
+     <string>Stop simulation</string>
+    </property>
+    <property name="whatsThis">
+     <string>Stop simulation</string>
+    </property>
+    <property name="name" stdset="0">
+     <string>simStop</string>
+    </property>
+   </action>
+   <property name="name" stdset="0">
+    <string>toolSim</string>
+   </property>
+  </actiongroup>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/icons" >
+        <file>creaworld.xpm</file>
+        <file>simgo.xpm</file>
+        <file>simpause.xpm</file>
+        <file>simrecord.xpm</file>
+        <file>simstep.xpm</file>
+        <file>simstop.xpm</file>
+        <file>stop.png</file>
+        <file>simvideo.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,57 @@
+<ui version="4.0" >
+ <class>ACControlTab</class>
+ <widget class="QewSimpleDialog" name="ACControlTab" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>232</width>
+    <height>69</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Area center control dialog</string>
+  </property>
+  <property name="toolTip" >
+   <string>Area center control dialog</string>
+  </property>
+  <property name="whatsThis" >
+   <string>This dialog can embebed other dialogs.
+It can be inherited for subclassing.</string>
+  </property>
+  <property name="containerName" >
+   <cstring>QewContainerFrame</cstring>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" >
+   <item>
+    <widget class="QFrame" name="QewContainerFrame" >
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QCheckBox" name="pathCheckBox" >
+        <property name="text" >
+         <string>Show area center path</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QewSimpleDialog</class>
+   <extends>QewExtensibleDialog</extends>
+   <header>/usr/include/qew5/qewsimpledialog.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

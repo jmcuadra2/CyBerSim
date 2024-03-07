@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Search-icon.jpg</file>
+        <file>back.xpm</file>
+        <file>editcopy.png</file>
+        <file>editcut.png</file>
+        <file>editpaste.png</file>
+        <file>filenew.xpm</file>
+        <file>fileopen.xpm</file>
+        <file>filesave.xpm</file>
+        <file>filetext.xpm</file>
+        <file>forward.xpm</file>
+        <file>help.png</file>
+        <file>home.xpm</file>
+        <file>joystick.png</file>
+        <file>neuraldis32.xpm</file>
+        <file>preview-icon.jpg</file>
+        <file>printer1.png</file>
+        <file>redo.png</file>
+        <file>rotate_cw.png</file>
+        <file>undo.png</file>
+    </qresource>
+</RCC>
